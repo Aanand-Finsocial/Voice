@@ -1,0 +1,158 @@
+
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  overflow: hidden;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* Add or update voice wave animation */
+@keyframes voiceWave {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.voice-wave-green {
+  border: 2px solid rgba(52, 211, 153, 0.5); /* Green color for recording */
+}
+
+.voice-wave-blue {
+  border: 2px solid rgba(59, 130, 246, 0.5); /* Blue color for playback */
+}
+
+.voice-wave {
+  border-width: 2px;
+  border-style: solid;
+  animation: voiceWave 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.voice-wave:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.voice-wave:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.voice-wave:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+/* Custom button styles for mic and close buttons */
+.mic-button {
+  border-radius: 9999px !important;
+  border: 2px solid transparent !important;
+  padding: 0 !important;
+  transition: border-color 0.25s ease-in-out !important;
+}
+
+.close-button {
+  border-radius: 9999px !important;
+  border: 2px solid transparent !important;
+  padding: 0 !important;
+  transition: border-color 0.25s ease-in-out !important;
+}
+
+/* Add the blue border on hover, matching the language selector */
+.mic-button:hover, .close-button:hover {
+  border-color: #646cff !important;
+  outline: none !important;
+}
+
+/* Apply focus styles */
+.mic-button:focus, .close-button:focus {
+  outline: none !important;
+  border-color: #646cff !important;
+}
+
+/* Add spin animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border-radius: 50%;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(255, 255, 255, 0.8);
+  animation: spin 0.8s linear infinite;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
